@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+<h1>Esto es tu página de usuario</h1>
+<br>
+<h2 style="text-align: center">Información acerca del usuario actual</h2>
+<a class="btn btn-outline-info btn-lg btn-block" type="submit" th:href="@{/user/perfil}">Perfil de usuario</a>
+<h2 style="text-align: center">Administrar tus taréas</h2>
+<a class="btn btn-outline-info btn-lg btn-block" type="submit" th:href="@{/user/tareas/listado}">Administrar tareas</a>
+<h2 style="text-align: center">Dashboard</h2>
+<a class="btn btn-outline-info btn-lg btn-block" type="submit" th:href="@{/user/dash}">Acceder</a>
+<br>
+<hr>
+<a class="btn btn-primary btn-lg btn-block" type="submit" th:href="@{/}">Volver a inicio</a>
+
+</body>
+</html>

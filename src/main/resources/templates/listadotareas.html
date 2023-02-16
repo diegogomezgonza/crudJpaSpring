@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+<h1>Estas son las tareas de usuario</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Tareas</th>
+    <th>Descripcion</th>
+    <th>Estado</th>
+  </tr>
+  </thead>
+  <tbody style="background-color: #9fa6ff; color: white; font-weight: bold">
+  <tr th:each="usuario : ${listaUsuarios}">
+    <td>
+      <th:block th:each="tarea : ${usuario.getTareas()}">
+        <ul>
+          <li th:text="${tarea.getNombre()}"></li>
+        </ul>
+      </th:block>
+    </td>
+    <td>
+      <th:block th:each="tarea : ${usuario.getTareas()}">
+        <ul>
+          <li th:text="${tarea.getDescripcion()}"></li>
+        </ul>
+      </th:block>
+    </td>
+
+    <td>
+      <th:block th:each="tarea : ${usuario.getTareas()}">
+        <ul>
+          <li th:text="${tarea.getEstado()}"></li>
+        </ul>
+      </th:block>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<a class="btn btn-primary btn-lg btn-block" type="submit" th:href="@{/user}">Volver a usuario</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<h1>Usuarios y tareas</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>NIF</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Tareas</th>
+        <th>Descripcion</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+    </thead>
+    <tbody style="background-color: #9fa6ff; color: white; font-weight: bold">
+    <tr th:each="usuario : ${listaUsuarios}">
+        <td th:text="${usuario.getNif()}"></td>
+        <td th:text="${usuario.getNombre()}"></td>
+        <td th:text="${usuario.getApellidos()}"></td>
+        <td>
+            <th:block th:each="tarea : ${usuario.getTareas()}">
+                <ul>
+                    <li th:text="${tarea.getNombre()}"></li>
+                </ul>
+            </th:block>
+        </td>
+        <td>
+            <th:block th:each="tarea : ${usuario.getTareas()}">
+                <ul>
+                    <li th:text="${tarea.getDescripcion()}"></li>
+                </ul>
+            </th:block>
+        </td>
+        <td>
+            <form th:action="@{/admin/usuario/editar}" method="get">
+                <button type="submit" class="btn btn-primary" th:value="${usuario.getNif()}" name="nif"><i class="fa-sharp fa-solid fa-arrow-pointer"></i></button>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/borrar}" method="get">
+                <button type="submit" class="btn btn-secondary" th:value="${usuario.getNif()}" name="nif"><i class="fa-solid fa-trash"></i></button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a class="btn btn-success btn-lg btn-block" type="submit" th:href="@{/admin/usuario/nuevo}">Registrar nuevo usuario</a>
+<a class="btn btn-primary btn-lg btn-block" type="submit" th:href="@{/}">Volver a inicio</a>
+</body>
+</html>

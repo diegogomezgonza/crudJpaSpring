@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestor de tareas: Registro de nuevo usuario</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+<form th:action="@{/guardar}" th:object="${usuario}" method="post" style="padding-left: 10px; font-weight: bold">
+    <fieldset><h2>Registro de un nuevo usuario: </h2>
+        <table>
+            <tr>
+                <td><label>NIF: </label></td>
+                <td><input type="text" th:field="*{nif}" /></td>
+            </tr>
+            <tr>
+                <td><label>Nombre: </label></td>
+                <td><input type="text" th:field="*{nombre}" /></td>
+            </tr>
+            <tr>
+                <td><label>Apellidos: </label></td>
+                <td><input type="text" th:field="*{apellidos}" /></td>
+            </tr>
+            <tr>
+                <td><label>Contraseña: </label></td>
+                <td><input type="text" th:field="*{pw}" /></td>
+            </tr>
+            <tr>
+                <td><label>Estado (1 = Activo, 0 = Inactivo </label></td>
+                <td><input type="number" max="1" min="0" th:field="*{activo}" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-success btn-lg btn-block" type="submit">Guardar nuevo usuario</button>
+                    <a class="btn btn-primary btn-lg btn-block" type="submit" th:href="@{/admin}">Volver a administrador</a>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>
