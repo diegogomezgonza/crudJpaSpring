@@ -5,7 +5,7 @@ Este proyecto consiste en un CRUD (Crear, Leer, Actualizar, Eliminar) desarrolla
 ## Spring Boot
 Spring Boot es un framework de Java que facilita la creación de aplicaciones Java de manera rápida y sencilla. Proporciona una configuración por defecto y un conjunto de herramientas que simplifican el desarrollo.
 
-## JPA (Java Persistence API)
+## JPA 
 JPA es una especificación de Java que describe una interfaz común para mapear objetos Java a bases de datos relacionales. Permite el mapeo de clases Java a tablas de bases de datos y el manejo de operaciones CRUD de manera sencilla y transparente.
 
 ## Hibernate
