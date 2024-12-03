@@ -1,4 +1,4 @@
-# CRUD con JPA y Spring Boot
+# CRUD + JPA y Spring Boot
 Este proyecto consiste en un CRUD (Crear, Leer, Actualizar, Eliminar) desarrollado utilizando JPA (Java Persistence API) y Spring Boot. Proporciona funcionalidades para añadir, eliminar y actualizar elementos en una base de datos mediante una interfaz RESTful.
 
 # Tecnologías Utilizadas
